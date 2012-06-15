@@ -1,0 +1,61 @@
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body>
+  
+  <div class="thermometer-widget">
+
+    <div class="title">Donation Thermometer</div>
+    <div class="cause">A good cause!</div>  
+
+    <div class="figures">
+      <div class="goal">
+        <span class="label">Our Goal</span>
+        <span class="value">&pound;5,000</span>
+      </div>
+      <div class="current_total">
+        <span class="label">Raised so far</span>
+        <span class="value">&pound;3,000</span>
+      </div>
+    </div>
+
+    <div class="display">
+      <div class="thermometer">
+        <div class="top"></div>
+        <div class="middle">
+            <div class="value" style="height:99px;"></div>
+        </div>
+        <div class="base current_total">
+          <div class="value">&pound;3,000</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <form id="donate_form" action="donate.php">
+    <label for="who">Name</label><input type="text" value="Anon" name="who" /><br />
+    <label for="how_much">How Much</label><input type="number" value="100.00" name="how_much" /><br />
+    <label for="reset_total">Reset?</label><input name="reset_total" type="checkbox" value="1" />
+    <input type="submit" value="Donate!" />
+  </form>
+  
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+  <script src="widget.js"></script>
+  <script>
+  $(function() {
+    $('#donate_form').submit(function() {
+      var form = $(this);
+      var values = form.serialize();
+      $.ajax({
+        url: 'donate.php',
+        data: values
+      });
+      return false;
+    });
+  });
+  </script>
+</body>
+</html>
