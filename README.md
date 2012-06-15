@@ -12,12 +12,12 @@ This repo contains the full working solution of the HTML5 Hacks Thermometer.
 4. Add the credentials from 2. to `config.php`
 5. If you would like the database functionality you can use the following to create the database:
 
-       CREATE TABLE IF NOT EXISTS `donations` (
-         `id` int(11) NOT NULL auto_increment,
-         `who` varchar(200) NOT NULL,
-         `how_much` decimal(10,2) NOT NULL,
-         `when` timestamp NOT NULL default CURRENT_TIMESTAMP,
-         `running_total` decimal(10,2) NOT NULL,
-         PRIMARY KEY  (`id`)
-       )
+         CREATE TABLE IF NOT EXISTS `donations` (
+           `id` int(11) NOT NULL auto_increment,
+           `who` varchar(200) NOT NULL,
+           `how_much` decimal(10,2) NOT NULL,
+           `when` timestamp NOT NULL default CURRENT_TIMESTAMP,
+           `running_total` decimal(10,2) NOT NULL,
+           PRIMARY KEY  (`id`)
+         )
 6. Update the application key defined inline within `widget.js` to match the `pusher_key` defined in `config.php`.
