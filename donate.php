@@ -14,7 +14,7 @@
   }
 
   $running_total = 0;
-  $last_update = "SELECT * FROM $db_tablename ORDER BY id DESC LIMIT 1" or die("Error in the consult.." . mysqli_error($con);
+  $last_update = "SELECT * FROM $db_tablename ORDER BY id DESC LIMIT 1" or die("Error in the consult.." . mysqli_error($con));
   $result = $con->query($last_update);
   if($result) {
     $row = mysqli_fetch_array($result);
@@ -24,7 +24,7 @@
   $running_total = $running_total + $how_much;
   
   $insert_query = "INSERT INTO $db_tablename (who, how_much, running_total) ";
-  $insert_query .= sprintf( "VALUES('%s', %f, %f)", $who, $how_much, $running_total ) or die("Error in the consult.." . mysqli_error($con);
+  $insert_query .= sprintf( "VALUES('%s', %f, %f)", $who, $how_much, $running_total ) or die("Error in the consult.." . mysqli_error($con));
   
   $insert_result = $con->query($insert_query);
   if(!$insert_result) {
