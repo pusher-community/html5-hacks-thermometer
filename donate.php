@@ -1,7 +1,8 @@
 <?php 
+  require 'vendor/autoload.php';
   require('config.php');
 
-  $con = mysql_connect("localhost", $db_username, $db_password);
+  $con = mysql_connect($db_host, $db_username, $db_password);
     if (!$con)
     {
       die('Could not connect: ' . mysql_error());
@@ -37,7 +38,6 @@
   
   mysql_close($con);
   
-  require('Pusher.php');
   $pusher = new Pusher($pusher_key, $pusher_secret, $pusher_app_id);
   $channel_name = 'donations-channel';
 
