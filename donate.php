@@ -2,7 +2,7 @@
   require 'vendor/autoload.php';
   require('config.php');
 
-  $con = mysqli_connect($db_host, $db_username, $db_passwordk, $db_name) or die("Error " . mysqli_error($con));
+  $con = mysqli_connect($db_host, $db_username, $db_password, $db_name) or die("Error " . mysqli_error($con));
   
   $who = $_GET['who'];  
   $who = mysql_real_escape_string( $who );  
