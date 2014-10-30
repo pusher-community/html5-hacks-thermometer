@@ -115,7 +115,7 @@ $(function() {
   var config = setUp('.thermometer-widget');
   addBehaviours(config, true);
   
-  var pusher = new Pusher("006c79b1fe1700c6c10d");
+  var pusher = new Pusher("8d7867b9c36e71e38fd1");
   var channel = pusher.subscribe('donations-channel');
   var animateInterval = null;
   channel.bind('new_donation', function(data) {
