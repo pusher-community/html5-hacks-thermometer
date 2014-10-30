@@ -7,7 +7,7 @@ $db_name = substr($url["path"],1);
 $db_password = $url["pass"];
 $db_tablename = 'donations';
 
-$pusher_app_id = getenv('94729');
-$pusher_key = getenv('8d7867b9c36e71e38fd1');
-$pusher_secret = getenv('45193d4dbbef4793f449');
+$pusher_app_id = getenv('PUSHER_APP_ID');
+$pusher_key = getenv('PUSHER_APP_KEY');
+$pusher_secret = getenv('PUSHER_APP_SECRET');
 ?>

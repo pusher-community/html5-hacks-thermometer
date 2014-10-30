@@ -28,7 +28,7 @@
   
   $insert_result = $con->query($insert_query);
   if(!$insert_result) {
-    die('insert query failed' . mysql_error());
+    die('insert query failed' . mysqli_error($con));
   }
   
   $pusher = new Pusher($pusher_key, $pusher_secret, $pusher_app_id);
