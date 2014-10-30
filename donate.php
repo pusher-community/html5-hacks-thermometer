@@ -5,9 +5,9 @@
   $con = mysqli_connect($db_host, $db_username, $db_password, $db_name) or die("Error " . mysqli_error($con));
   
   $who = $_GET['who'];  
-  $who = mysql_real_escape_string( $who );  
+  $who = mysqli_real_escape_string( $con, $who );  
   $how_much = $_GET['how_much'];  
-  $how_much = mysql_real_escape_string( $how_much );
+  $how_much = mysqli_real_escape_string( $con, $how_much );
 
   if( !$who || !how_much || !is_numeric($how_much) ) {
     die('unsupported who and how_much values');
